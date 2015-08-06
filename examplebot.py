@@ -1,5 +1,16 @@
 #!/usr/bin/env python3
 
+
+##
+# Dear Andy,
+# Good job going through your code today!
+# However, whatever you were thinking when
+# you made me must have been some sort of
+# insanity.  Please don't do most of what
+# you thought you were doing here again.
+# -- Note from Self.
+##
+
 from ircbot import IrcBot
 from bog import Boggle
 import random
@@ -12,6 +23,7 @@ CHANS = ("#andybots","#botdever", )
 
 class ExampleBot(IrcBot):
     def response(self, ctx):
+        """Clean this up and don't ever do it again"""
         msg = ctx['msg']
         if "testing" in msg:
             self.creply("Loud and clear")
@@ -56,6 +68,7 @@ class ExampleBot(IrcBot):
         if ".guess" in msg:
             self.guess(ctx['sender'])
     def help_message(self, games=None):
+        """Based on what I see here, I should be using a dict"""
         if games is None:
             self.creply("You do the .game [game or help] [*players or *games] and I'll figure out what you want.  :D")
         else:
@@ -72,6 +85,7 @@ class ExampleBot(IrcBot):
         self.creply("I know how to play " + games + ". But that's it at the moment.")
 
     def guess(self, players):
+        """ Don't put the games in the bot... clean this too!"""
         self.creply("I'm thinking of a number between 1 and 255.  First player to guess it wins! :D")
         answer = int(random.choice(range(255))) + 1
         print("A>>>", answer)
